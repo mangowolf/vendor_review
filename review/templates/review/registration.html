@@ -3,29 +3,46 @@
 {% block content %}
     <h2> User Registration </h2>
     <hr>
-    <div class="col-md-1"></div>
-    <div class="col-md-6" id="register-form">
-        <h2>Registration Form</h2>
-
-        <form>
-            <label>First Name: </label><br>
-            <input type="text"><br>
-            <label>Last Name: </label><br>
-            <input type="text"><br>
-            <label>Email:</label><br>
-            <input type="text"><br>
-            <label>Username:</label><br>
-            <input type="text"><br>
-            <label>Password:</label><br>
-            <input type="password"><br>
-            <label>Verify Password:</label><br>
-            <input type="password"><br><br>
-
-            <input type="submit" value="Create Your Account"><br><br>
-        </form>
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-6 container">
+            <div class="row registration-container">
+                <h2 class="registration-header">Registration Form</h2>
+                <div class="row" id="">
+                    <div class="col-md-6" id="sign-up-marketing">
+                        Sign up to get the inside scoop on your potential new vendor today!
+                        <ul>
+                            <li>Find out what other Clients think of this vendor</li>
+                            <li>Research prices without having to go through a sales pitch</li>
+                            <li>See who your team will work with throughout the business pipeline</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6" id="sign-up-form">
+                        <form>
+                            <label>First Name: </label><br>
+                            <input type="text"><br>
+                            <label>Last Name: </label><br>
+                            <input type="text"><br>
+                            <label>Email:</label><br>
+                            <input type="text"><br>
+                            <label>Username:</label><br>
+                            <input type="text"><br>
+                            <label>Password:</label><br>
+                            <input type="password"><br>
+                            <label>Verify Password:</label><br>
+                            <input type="password"><br><br>
+                            <input type="submit" value="Create Your Account"><br><br>
+                        </form>
+                    </div>
+                </div>
+                    <span>Already have an account? <a href=''>Sign In</a><span>
+            </div>
+            <a href=''>< back</a>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-3">Advertisement</div>
     </div>
-    <div class="col-md-2"></div>
-    <div class="col-md-3">Advertisement</div>
-
+</div>
 
 {% endblock %}

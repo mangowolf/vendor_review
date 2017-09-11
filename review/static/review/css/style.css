@@ -1,3 +1,30 @@
-#register-form{
+h1,h2{
+    padding-left: 5px;
+}
+
+.logo{
+    background-color: #2980B9;
+    color: white;
+    font-size: 36px;
+    padding-left: 5px;
+}
+
+.registration-header{
+    padding-left: 0px;
+}
+
+.registration-container{
     border: 1px solid black;
+    padding-left: 10px;
+    border-radius: 4px;
+}
+
+#sign-in{
+
+}
+
+#sign-up-marketing{
+}
+
+#sign-up-form{
 }
