@@ -1,0 +1,29 @@
+{% extends "review/index.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8 container">
+            <div class="row registration-container">
+                <h2 class="registration-header">Post a review:</h2>
+                <p>Post a review and receive unlimited access to all of our content for 12 months, once we launch!</p>
+                <div class="row">
+                    <div class="col-md-9">
+                        <form>
+                            <label>Company Name</label><br>
+                            <input type="text" size="80"><br>
+                            <label>Review</label><br>
+                            <textarea rows="10" cols="80"></textarea><br>
+                            <input type="submit" value="Submit"><br><br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-2">Advertisement</div>
+    </div>
+</div>
+
+{% endblock %}

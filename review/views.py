@@ -6,14 +6,15 @@ import requests
 import json
 
 # Create your views here.
-def base(request):
-    return render(request, 'review/base.html')
 
 def index(request):
     return render(request, 'review/index.html')
 
 def registration(request):
     return render(request,'review/registration.html')
+
+def new_company_review(request):
+    return render(request, 'review/new_company_review.html')
 
 def company_review(request):
     parsedData = []
