@@ -16,7 +16,7 @@ def registration(request):
 def new_company_review(request):
     return render(request, 'review/new_company_review.html')
 
-def company_review(request):
+def company_review2(request):
     parsedData = []
     if request.method == 'POST':
         username = request.POST.get('user')
@@ -35,3 +35,6 @@ def company_review(request):
             userData['following'] = data['following']
         parsedData.append(userData)
     return render(request, 'review/company_review.html', {'data': parsedData})
+
+def company_review(request):
+    return render(request, 'review/company_review.html')

@@ -17,8 +17,13 @@ h1,h2{
     border: 1px solid black;
     padding-left: 10px;
     border-radius: 4px;
+    background-color: #fcfcfc;
+    box-shadow: 0 4px 8px grey;
 }
 
+#reg-page-container{
+    margin-top: 20px;
+}
 #sign-in{
 
 }
