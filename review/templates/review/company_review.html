@@ -1,44 +1,51 @@
 {% extends "review/index.html" %}
 
 {% block content %}
-<div class="container page-content-wrapper">
-<div class="row">
-    <div class="col-md-1">
-    </div>
-    <div class="col-md-6 container box-styling">
-        <!--Company Overview-->
-        <h3>__Company Name__ Overview</h3>
-        <div class="row">
-            <div class="col-md-6">
-                <ul class="no-decorator">
-                    <strong><li>Website </li></strong>
-                    <strong><li>Headquarters </li></strong>
-                    <strong><li>Type </li></strong>
-                    <strong><li>Revenue </li></strong>
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <ul class="no-decorator">
-                    <strong><li>Size </li></strong>
-                    <strong><li>Founded </li></strong>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <p>Paragraph providing summary of the company's business</p>
-                <strong><p>Mission: </p></strong>
-            </div>
-        </div>
-    </div>
+<div class="container page-content-wrapper box-styling">
+    <div class="row">
+        <div class="col-md-8 container box-styling">
+            <!--Company Overview-->
+            <div class="row">
+                <div class="col-md-12 box-styling">
+                    <h3>__Company Name__ Overview</h3>
+                        <div class="col-md-6">
+                            <ul class="no-decorator">
+                                <strong><li>Website </li></strong>
+                                <strong><li>Headquarters </li></strong>
+                                <strong><li>Type </li></strong>
+                                <strong><li>Revenue </li></strong>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="no-decorator">
+                                <strong><li>Size </li></strong>
+                                <strong><li>Founded </li></strong>
+                            </ul>
+                        </div>
 
-    <div class="col-md-1"></div>
-    <div class="col-md-3 container box-styling">
-        <h3>Related Vendors/Partners</h3>
+                    <p>Paragraph providing summary of the company's business</p>
+                    <strong><p>Mission: </p></strong>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 container box-styling">
+                    <h3>Why work with us?</h3>
+                    <p>Short Pitch</p>
+                    <span>Link to</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 container box-styling">
+                    <h3>__Company_Name__ Review</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 less-space"></div>
+        <aside class="col-md-3 container box-styling">
+            <h3>Related Vendors/Partners</h3>
+        </aside>
     </div>
-    <div class="col-md-1">
     </div>
-</div>
 </div>
 
 {% endblock %}
