@@ -10,11 +10,6 @@ h1,h2{
 }
 
 /*COMPANY REVIEW PAGE*/
-.no-decorator{
-    padding: 0;
-    list-style-type: none;
-}
-
 .box-styling{
     border: 1px solid black;
     border-radius: 4px;
@@ -24,11 +19,38 @@ h1,h2{
     box-shadow: 0 4px 8px grey;
 }
 
+.nav-list-item{
+    display: inline;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-ul-item{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.no-decorator{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
 .less-space{
     width: 5px;
 }
 
 /*REGISTRATION PAGE*/
+.center-text{
+    text-align: center;
+}
+
+#reg-page-container{
+    margin-top: 20px;
+}
+
 .registration-header{
     padding-left: 0px;
 }
@@ -41,9 +63,6 @@ h1,h2{
     box-shadow: 0 4px 8px grey;
 }
 
-#reg-page-container{
-    margin-top: 20px;
-}
 #sign-in{
 
 }
@@ -52,8 +71,4 @@ h1,h2{
 }
 
 #sign-up-form{
-}
-
-.center-text{
-    text-align: center;
 }

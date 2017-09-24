@@ -20,9 +20,21 @@
     <link rel="stylesheet" type="text/css" href="{% static 'review/css/style.css' %}" />
 </head>
 <body>
-    <div class="logo">
-        <h2>Business Relationship Company Review</h2>
-    </div>
+    <nav class="container">
+        <div class="row">
+            <div class="col-md-2 logo">
+                <h4>B2B MetaReview</h4>
+            </div>
+            <div class="col-md-10">
+                <ul class="nav-ul-item">
+                    <li class="nav-list-item"><a href="">Company Reviews |</a></li>
+                    <li class="nav-list-item"><a href="">Sign In |</a></li>
+                    <li class="nav-list-item"><a href="">Write a Review |</a></li>
+                    <li class="nav-list-item"><a href="">For Companies |</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div>
     {% block content %}
 
