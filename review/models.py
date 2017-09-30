@@ -6,7 +6,7 @@ from django.db import models
 # Create your models here.
 class Person(models.Model):
     username = models.CharField(max_length=30)
-    email = models.EmailField()
+    email = models.EmailField(default='noreply@example.com')
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
 
@@ -24,3 +24,7 @@ class Company_Reviews(models.Model):
         'Company',
         on_delete=models.CASCADE,
         )
+    metarating = models.DecimalField(max_digits=2, decimal_places=1)
+    linkedin_icon = models.ImageField(height_field=100, width_field=100)
+    linkedin_stars = models.DecimalField(max_digits=3, decimal_places=2)
+    review_text = models.TextField(max_length=2000)
