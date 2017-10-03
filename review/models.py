@@ -28,3 +28,6 @@ class Company_Reviews(models.Model):
     linkedin_icon = models.ImageField(height_field=100, width_field=100)
     linkedin_stars = models.DecimalField(max_digits=3, decimal_places=2)
     review_text = models.TextField(max_length=2000)
+    star_rating = models.PositiveSmallIntegerField(default='0')
+    company_name = models.CharField(default='',max_length=300)
+    review = models.TextField(default='')
