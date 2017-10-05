@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.forms import ModelForm
 
 # Create your models here.
 class Person(models.Model):
@@ -31,3 +32,8 @@ class Company_Reviews(models.Model):
     star_rating = models.PositiveSmallIntegerField(default='0')
     company_name = models.CharField(default='',max_length=300)
     review = models.TextField(default='')
+
+class Company_Reviews_Form(ModelForm):
+    class Meta:
+        model = Company_Reviews
+        fields = ['company_name', 'review']
