@@ -37,4 +37,11 @@ def company_review2(request):
     return render(request, 'review/company_review.html', {'data': parsedData})
 
 def company_review(request):
-    return render(request, 'review/company_review.html')
+    if request.method == "POST":
+        form = Company_Reviews_Form(request.POST)
+        if form.is_valid():
+            post = form.save()
+            post.save()
+    else:
+        form = Company_Reviews_Form()
+    return render(request, 'review/company_review.html', {'form': form})

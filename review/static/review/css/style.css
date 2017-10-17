@@ -122,3 +122,10 @@ label:hover ~ input:checked ~ label {
 
 #sign-up-form{
 }
+
+/*TEST*/
+#counter{
+    border: 10px solid black;
+    width: 10px;
+    height: 10px;
+}

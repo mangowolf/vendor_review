@@ -32,6 +32,8 @@ class Company_Reviews(models.Model):
     star_rating = models.PositiveSmallIntegerField(default='0')
     company_name = models.CharField(default='',max_length=300)
     review = models.TextField(default='')
+    #include author
+    #include timestamp
 
 class Company_Reviews_Form(ModelForm):
     class Meta:
