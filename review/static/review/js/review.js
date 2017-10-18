@@ -5,8 +5,8 @@ $(document).ready(function(){
         $("this").hide();
     });
 
+    var count = 1;
     $("button").click(function(){
-        var count = 1;
-        
+        $("#counter").text(count++);
     })
 });
