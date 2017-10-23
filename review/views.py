@@ -16,7 +16,6 @@ def registration(request):
     return render(request,'review/registration.html')
 
 def new_company_review(request):
-    Company_Reviews.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'review/new_company_review.html')
 
 def company_review2(request):
@@ -38,8 +37,8 @@ def company_review2(request):
             userData['following'] = data['following']
         parsedData.append(userData)
     return render(request, 'review/company_review.html', {'data': parsedData})
-
-def company_review(request):
+'''
+def company_review3(request):
     if request.method == "POST":
         form = Company_Reviews_Form(request.POST)
         if form.is_valid():
@@ -48,3 +47,7 @@ def company_review(request):
     else:
         form = Company_Reviews_Form()
     return render(request, 'review/company_review.html', {'form': form})
+'''
+def company_review(request):
+    posts = Company_Reviews.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request,'review/company_review3.html',{'posts': posts})
