@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 from django.shortcuts import render, HttpResponse
 import requests
 import json
+from .models import Company_Reviews, Company
+from django.utils import timezone
 
 # Create your views here.
 
@@ -14,6 +16,7 @@ def registration(request):
     return render(request,'review/registration.html')
 
 def new_company_review(request):
+    Company_Reviews.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'review/new_company_review.html')
 
 def company_review2(request):
