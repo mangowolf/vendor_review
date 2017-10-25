@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, get_object_or_404
 import requests
 import json
 from .models import Company_Reviews, Company
@@ -53,4 +53,6 @@ def company_review(request):
     return render(request,'review/company_review3.html',{'posts': posts})
 
 def post_detail(request,pk):
-    Post.objects.get(pk=pk)
+    #Company_Reviews.objects.get(pk=pk)
+    post = get_object_or_404(Company_Reviews, pk=pk)
+    return render(request, 'review/post_detail.html', {'post': post})
