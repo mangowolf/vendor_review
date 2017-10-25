@@ -51,3 +51,6 @@ def company_review3(request):
 def company_review(request):
     posts = Company_Reviews.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request,'review/company_review3.html',{'posts': posts})
+
+def post_detail(request,pk):
+    Post.objects.get(pk=pk)
