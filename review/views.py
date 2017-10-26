@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, HttpResponse, get_object_or_404
+from django.shortcuts import render, HttpResponse, get_object_or_404, redirect
 import requests
 import json
 from .models import Company_Reviews, Company
+from .forms import PostForm
 from django.utils import timezone
 
 # Create your views here.
@@ -16,7 +17,17 @@ def registration(request):
     return render(request,'review/registration.html')
 
 def new_company_review(request):
-    return render(request, 'review/new_company_review.html')
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = PostForm()
+    return render(request, 'review/new_company_review.html', {'form': form})
 
 def company_review2(request):
     parsedData = []
