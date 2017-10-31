@@ -29,7 +29,9 @@
             <div class="col-md-10">
                 <ul class="nav-ul-item">
                     <li class="nav-list-item"><a href="/review/company_review">Company Reviews |</a></li>
-                    <li class="nav-list-item"><a href="/review/registration">Sign In |</a></li>
+                    <li class="nav-list-item"><a href="/review/registration">Register |</a></li>
+                    <li class="nav-list-item"><a href="{% url 'login' %}">Log In |</a></li>
+
                     {% if user.is_authenticated %}
                         <li class="nav-list-item"><a href="{% url 'new_company_review' %}">Write a Review |</a></li>
                     {% endif %}

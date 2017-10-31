@@ -2,11 +2,10 @@
 {% block content %}
     {% for post in posts %}
     <div>
-        <p>published: {{ post.published_date }}</p>
         <hr>
+        <p>published: {{ post.published_date }}</p>
         <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
         <p>{{ post.review|linebreaksbr }}</p>
-
     </div>    
     {% endfor %}
 

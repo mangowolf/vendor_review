@@ -109,6 +109,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#Login
+LOGIN_REDIRECT_URL = '/review'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/

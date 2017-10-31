@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, HttpResponse, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 import requests
 import json
 from .models import Company_Reviews, Company
@@ -13,9 +14,11 @@ from django.utils import timezone
 def index(request):
     return render(request, 'review/index.html')
 
+
 def registration(request):
     return render(request,'review/registration.html')
 
+@login_required
 def new_company_review(request):
     if request.method == "POST":
         form = PostForm(request.POST)
@@ -29,6 +32,7 @@ def new_company_review(request):
         form = PostForm()
     return render(request, 'review/new_company_review.html', {'form': form})
 
+@login_required
 def post_edit(request, pk):
     post = get_object_or_404(Company_Reviews, pk=pk)
     if request.method == "POST":
@@ -42,6 +46,12 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'review/new_company_review.html', {'form': form})
+
+@login_required
+def post_delete(request, pk):
+    post = get_object_or_404(Company_Reviews, pk=pk)
+    post.delete()
+    return redirect('company_review')
 
 def company_review2(request):
     parsedData = []
