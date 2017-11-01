@@ -15,4 +15,5 @@ urlpatterns = [
     url(r'^post/(?P<pk>\d+)/delete/$', views.post_delete, name='post_delete'),
     #url(r'^accounts/login/$', views.login, name='login'),
     url(r'^login/$', auth_views.login, {'template_name': 'review/login.html'}, name='login'),
+    url(r'^logout/$', auth_views.logout, name='logout', kwargs={'next_page': '/review'}),
 ]
