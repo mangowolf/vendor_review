@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^review/', include('review.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^', include('review.urls'))
 ]
