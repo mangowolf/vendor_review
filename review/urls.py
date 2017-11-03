@@ -2,7 +2,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from rest_framework.urlpatterns import format_suffix_patterns
-from .views import CreateView
+from .views import CreateView, DetailsView
 
 from review import views
 
@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name': 'review/login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout', kwargs={'next_page': '/review'}),
     url(r'^api/$', CreateView.as_view(), name="create"),
+    url(r'^api/(?P<pk>[0-9]+)/$', DetailsView.as_view(), name="details"),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
