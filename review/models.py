@@ -16,6 +16,7 @@ class Company(models.Model):
     size = models.IntegerField()
     founded = models.DateField()
     summary = models.TextField()
+    owner = models.ForeignKey('auth.User', related_name='api', on_delete = models.CASCADE)
 
     def __str__(self):
         return self.company_name

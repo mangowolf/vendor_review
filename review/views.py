@@ -10,6 +10,7 @@ from .forms import PostForm
 from django.utils import timezone
 from rest_framework import generics
 from .serializers import CompanySerializer
+from rest_framework import permissions
 
 # Create your views here.
 
@@ -101,7 +102,7 @@ class CreateView(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         """Save the post data when creating a new bucketlist."""
-        serializer.save()
+        serializer.save(owner=self.request.user)
 
 class DetailsView(generics.RetrieveUpdateDestroyAPIView):
     """This class handles the http GET, PUT and DELETE requests."""

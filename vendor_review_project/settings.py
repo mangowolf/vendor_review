@@ -83,9 +83,9 @@ WSGI_APPLICATION = 'vendor_review_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'jimmy',
+        'NAME': 'vendor_review',
         'USER': 'jimmy',
-        'PASSWORD': '',
+        'PASSWORD': 'Bonner8187642396!',
         'HOST': 'localhost',
         'PORT': '',
     }

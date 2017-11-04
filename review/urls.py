@@ -8,7 +8,7 @@ from review import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^admin/', admin.site.urls),
+    #url(r'^admin/', admin.site.urls),
     url(r'^registration/$', views.registration, name='registration'),
     url(r'^new_company_review/$', views.new_company_review, name='new_company_review'),
     url(r'^company_review/$', views.company_review, name='company_review'),
@@ -18,6 +18,7 @@ urlpatterns = [
     #url(r'^accounts/login/$', views.login, name='login'),
     url(r'^login/$', auth_views.login, {'template_name': 'review/login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout', kwargs={'next_page': '/review'}),
+    url(r'^auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^api/$', CreateView.as_view(), name="create"),
     url(r'^api/(?P<pk>[0-9]+)/$', DetailsView.as_view(), name="details"),
 ]
