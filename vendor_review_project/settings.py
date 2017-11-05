@@ -11,20 +11,43 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+from django.core.exceptions iport ImproperlyConfigured
+import dj_database_url
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+#Handling Key Import Errors
+def get_env_variable(var_name):
+    """Get the environment variable or return exception."""
+    try:
+        return os.environ[var_name]
+    except KeyError:
+        error_msg = "Set the %s environment variable" % var_name
+        raise ImproperlyConfigured(error_msg)
+
+#Get ENV VARIABLES key
+ENV_ROLE = get_env_variable('ENV_ROLE')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=y0pikt=@_rl+5heykc!#c^(hzzl-*@9$1ke6#nso+m0%^-%wi'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+#with open('etc/secret_key.txt') as f:
+#    SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+TEMPLATE_DEBUG = DEBUG
+VENDOR_REVIEW_DB_PASS = False
+if ENV_ROLE == 'development':
+    DEBUG = True
+    TEMPLATE_DEBUG = DEBUG
+    VENDOR_REVIEW_DB_PASS = get_env_variable('VENDOR_REVIEW_DB_PASS')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
@@ -85,12 +108,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'vendor_review',
         'USER': 'jimmy',
-        'PASSWORD': 'Bonner8187642396!',
+        'PASSWORD': 'VENDOR_REVIEW_DB_PASS',
         'HOST': 'localhost',
         'PORT': '',
     }
 }
 
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

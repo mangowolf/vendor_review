@@ -18,12 +18,10 @@
                 <p>Post a review and receive unlimited access to all of our content for 12 months, once we launch!</p>
                 <div class="row">
                     <div class="col-md-9">
-                        <form method="POST">
+                        <form action="" method="POST">
                             {% csrf_token %}
-                            <!--
                             <label>Rate</label><br>
                             <div class="container">
-                                
                                 <ul class="rate-area">
                                   <input type="radio" id="5-star" name="rating" value="5" /><label for="5-star" title="Amazing">5 stars</label>
                                   <input type="radio" id="4-star" name="rating" value="4" /><label for="4-star" title="Good">4 stars</label>
@@ -32,16 +30,15 @@
                                   <input type="radio" id="1-star" name="rating" value="1" /><label for="1-star" title="Bad">1 star</label>
                                 </ul>
                             </div>
-                            -->
-                            
-                            {{ form.as_p }}
                             <!--
-                            <label>Title</label><br>
+                            {{ form.as_p }}
+                            -->
+                            <label>Company Name</label><br>
                             <input type="text" size="80"><br>
                             <br>
                             <label>Review</label><br>
                             <textarea rows="10" cols="80"></textarea><br>
-                            -->
+                            
                             <input type="submit" value="Submit"><br><br>
                         </form>
                     </div>
