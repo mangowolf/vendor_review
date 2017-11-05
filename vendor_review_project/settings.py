@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-from django.core.exceptions iport ImproperlyConfigured
+from django.core.exceptions import ImproperlyConfigured
 import dj_database_url
 
 
@@ -34,7 +34,7 @@ ENV_ROLE = get_env_variable('ENV_ROLE')
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = get_env_variable('SECRET_KEY')
 #with open('etc/secret_key.txt') as f:
 #    SECRET_KEY = f.read().strip()
 
@@ -47,7 +47,7 @@ if ENV_ROLE == 'development':
     TEMPLATE_DEBUG = DEBUG
     VENDOR_REVIEW_DB_PASS = get_env_variable('VENDOR_REVIEW_DB_PASS')
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
@@ -108,7 +108,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'vendor_review',
         'USER': 'jimmy',
-        'PASSWORD': 'VENDOR_REVIEW_DB_PASS',
+        'PASSWORD': VENDOR_REVIEW_DB_PASS,
         'HOST': 'localhost',
         'PORT': '',
     }

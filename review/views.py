@@ -8,6 +8,10 @@ import json
 from .models import Company_Reviews, Company
 from .forms import PostForm
 from django.utils import timezone
+from rest_framework import generics, permissions
+from .serializers import CompanySerializer
+from .permissions import IsOwner
+
 
 # Create your views here.
 
@@ -91,3 +95,21 @@ def post_detail(request,pk):
     #Company_Reviews.objects.get(pk=pk)
     post = get_object_or_404(Company_Reviews, pk=pk)
     return render(request, 'review/post_detail.html', {'post': post})
+
+class CreateView(generics.ListCreateAPIView):
+    """This class defines the create behavior of our rest api."""
+    queryset = Company.objects.all()
+    serializer_class = CompanySerializer
+    permission_classes = (permissions.IsAuthenticated, IsOwner)
+
+    def perform_create(self, serializer):
+        """Save the post data when creating a new company."""
+        serializer.save(owner=self.request.user)
+
+class DetailsView(generics.RetrieveUpdateDestroyAPIView):
+    """This class handles the http GET, PUT AND DELETE requests."""
+    queryset = Company.objects.all()
+    serializer_class = CompanySerializer
+    permission_classes = (
+        permissions.IsAuthenticated,
+        IsOwner)
