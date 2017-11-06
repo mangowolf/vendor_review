@@ -46,8 +46,12 @@ if ENV_ROLE == 'development':
     DEBUG = True
     TEMPLATE_DEBUG = DEBUG
     VENDOR_REVIEW_DB_PASS = get_env_variable('VENDOR_REVIEW_DB_PASS')
+if ENV_ROLE == 'production':
+    import dj_database_url
+    DATABASES['default'] = dj_database_url.config()
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.herokuapp.com']
+#ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
