@@ -1,1 +1,1 @@
-web: python manage.py collectstatic --no-input; gunicorn vendor_review_project.wsgi
+web: python manage.py collectstatic --no-input; gunicorn vendor_review_project.wsgi:application
