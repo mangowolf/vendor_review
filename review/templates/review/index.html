@@ -29,7 +29,7 @@
             <div class="col-md-10">
                 <ul class="nav-ul-item">
                     <li class="nav-list-item"><a href="/review/company_review">Company Reviews |</a></li>
-                    <li class="nav-list-item"><a href="">For Companies |</a></li>
+                    <li class="nav-list-item"><a href="{% url 'api' %}">API |</a></li>
                     {% if user.is_authenticated %}
                         <li class="nav-list-item"><a href="{% url 'new_company_review' %}">Write a Review |</a></li>
                         <li class="nav-list-item">Hello {{ user.username }} | <a href="{% url 'logout' %}">Log Out</a></li>

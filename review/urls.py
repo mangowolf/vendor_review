@@ -19,7 +19,7 @@ urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name': 'review/login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout', kwargs={'next_page': '/review'}),
     url(r'^auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^api/$', CreateView.as_view(), name="create"),
+    url(r'^api/$', CreateView.as_view(), name="api"),
     url(r'^api/(?P<pk>[0-9]+)/$', DetailsView.as_view(), name="details"),
 ]
 
