@@ -2,6 +2,11 @@ h1,h2{
     padding-left: 5px;
 }
 
+/*Test*/
+.box{
+  border: 1px solid black;
+}
+
 /*INDEX PAGE*/
 .logo{
     color: #2980B9;
@@ -17,6 +22,10 @@ h1,h2{
     margin-bottom: 10px;
     background-color: #fcfcfc;
     box-shadow: 0 4px 8px grey;
+}
+
+.post-header{
+    background-color: #8bb6f9;
 }
 
 .nav-list-item{
@@ -40,6 +49,11 @@ h1,h2{
 
 .less-space{
     width: 5px;
+}
+
+.review-container{
+    width:960px;
+    margin: auto;
 }
 
 /*NEW COMPANY PAGE*/
@@ -125,7 +139,5 @@ label:hover ~ input:checked ~ label {
 
 /*TEST*/
 #counter{
-    border: 10px solid black;
-    width: 10px;
-    height: 10px;
+    margin-left: 2px;
 }

@@ -20,6 +20,9 @@
                     <div class="col-md-9">
                         <form action="" method="POST">
                             {% csrf_token %}
+                            Company Name:<br>
+                            {{ form.companykey }}<br><br>
+                            <!--
                             <label>Rate</label><br>
                             <div class="container">
                                 <ul class="rate-area">
@@ -30,21 +33,24 @@
                                   <input type="radio" id="1-star" name="rating" value="1" /><label for="1-star" title="Bad">1 star</label>
                                 </ul>
                             </div>
-                            <!--
-                            {{ form.as_p }}
                             -->
+
+                            Review Title:<br>
+                            {{ form.title }}<br><br>
+                            Review:<br>
+                            {{ form.review }}<br>
+                            <!--
                             <label>Company Name</label><br>
                             <input type="text" size="80"><br>
                             <br>
                             <label>Review</label><br>
                             <textarea rows="10" cols="80"></textarea><br>
-                            
+                            -->
                             <input type="submit" value="Submit"><br><br>
                         </form>
                     </div>
                 </div>
             </div>
-            <button id="like">Like</button><div id="counter">0</div>
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-2" id="ad" name="Ad">Advertisement</div>
@@ -52,4 +58,3 @@
 </div>
 
 {% endblock %}
-{% block scripts %}    <script src="/static/review/js/review.js"></script>{% endblock %}
