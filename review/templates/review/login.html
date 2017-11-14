@@ -1,4 +1,4 @@
-{% extends "review/index.html" %}
+{% extends "review/base.html" %}
 
 {% block content %}
     {% if form.errors %}
@@ -7,18 +7,22 @@
 
     <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
-        <table>
-        <tr>
-            <td>{{ form.username.label_tag }}</td>
-            <td>{{ form.username }}</td>
-        </tr>
-        <tr>
-            <td>{{ form.password.label_tag }}</td>
-            <td>{{ form.password }}</td>
-        </tr>
-        </table>
+        <div class="col-md-3"></div>
+        <div class="login-container col-md-3">
+            <table>
+            <tr>
+                <td>{{ form.username.label_tag }}</td>
+                <td>{{ form.username }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.password.label_tag }}</td>
+                <td>{{ form.password }}</td>
+            </tr>
+            </table>
 
-        <input type="submit" value="login" />
-        <input type="hidden" name="next" value="{{ next }}" />
+            <input type="submit" value="login" />
+            <input type="hidden" name="next" value="{{ next }}" />
+        </div>
+        <div class="col-md-6"></div>
     </form>
 {% endblock %}

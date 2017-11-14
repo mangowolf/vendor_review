@@ -16,7 +16,7 @@ from .permissions import IsOwner
 # Create your views here.
 
 def index(request):
-    return render(request, 'review/index.html')
+    return render(request, 'index.html')
 
 def registration(request):
     return render(request,'review/registration.html')
@@ -55,7 +55,7 @@ def post_delete(request, pk):
     post = get_object_or_404(Company_Reviews, pk=pk)
     post.delete()
     return redirect('company_review')
-
+'''
 def company_review2(request):
     parsedData = []
     if request.method == 'POST':
@@ -76,6 +76,7 @@ def company_review2(request):
         parsedData.append(userData)
     return render(request, 'review/company_review.html', {'data': parsedData})
 '''
+'''
 def company_review3(request):
     if request.method == "POST":
         form = Company_Reviews_Form(request.POST)
@@ -89,7 +90,7 @@ def company_review3(request):
 
 def company_review(request):
     posts = Company_Reviews.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request,'review/company_review3.html',{'posts': posts})
+    return render(request,'review/company_review.html',{'posts': posts})
 
 def post_detail(request,pk):
     #Company_Reviews.objects.get(pk=pk)

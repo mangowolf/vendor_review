@@ -56,6 +56,12 @@ h1,h2{
     margin: auto;
 }
 
+/*LOGIN PAGE*/
+.login-container{
+    margin: auto;
+    border: 1px solid black;
+}
+
 /*NEW COMPANY PAGE*/
 .rate-area {
   float: left;

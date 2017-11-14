@@ -1,55 +1,151 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-<html>
-<head>
-    <!-- Latest compiled and minified CSS -->
+{% extends "review/base.html" %}
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% block content %}
+<div class="container page-content-wrapper box-styling">
+    <div class="row">
+        <div class="col-md-8 container box-styling">
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" type="text/css" href="{% static 'review/css/style.css' %}" />
-    {% block extra_head %}{% endblock %}
-</head>
-<body>
-    <nav class="container">
-        <div class="row">
-            <div class="col-md-2 logo">
-                <h4>B2B MetaReview</h4>
+            <!--COMPANY BANNER-->
+            <div class="row">
+                <div class="col-md-12">
+                    
+                    <div><a href=""><img>(Image Placeholder)</a></div>
+                    <div>Logo</div>
+                    <div class="col-md-8 box-styling">
+                        <ul class="nav-ul-item">
+                            <li class="nav-list-item"><a href="">Overview |</a></li>
+                            <li class="nav-list-item"><a href="">About Company |</a></li>
+                            <li class="nav-list-item"><a href="">Reviews |</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 box-styling">
+                        <button class="nav-list-item box-styling">Follow</button>
+                        <button class="nav-list-item box-styling">+ Add a Review</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-10">
-                <ul class="nav-ul-item">
-                    <li class="nav-list-item"><a href="/review/company_review">Company Reviews |</a></li>
-                    <li class="nav-list-item"><a href="{% url 'api' %}">API |</a></li>
-                    {% if user.is_authenticated %}
-                        <li class="nav-list-item"><a href="{% url 'new_company_review' %}">Write a Review |</a></li>
-                        <li class="nav-list-item">Hello {{ user.username }} | <a href="{% url 'logout' %}">Log Out</a></li>
-                        
-                    {% else %}
-                        <li class="nav-list-item"><a href="/review/registration">Register |</a></li>
-                        <li class="nav-list-item"><a href="{% url 'login' %}">Log In |</a></li>
-                    {% endif %}
 
-                </ul>
+            <!--Company Overview-->
+            <div class="row">
+                <div class="col-md-12 box-styling">
+                    <h3>__Company Name__ Overview</h3>
+                        <div class="col-md-6">
+                            <ul class="no-decorator">
+                                <strong><li>Website </li></strong>
+                                <strong><li>Headquarters </li></strong>
+                                <strong><li>Type </li></strong>
+                                <strong><li>Revenue </li></strong>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="no-decorator">
+                                <strong><li>Size </li></strong>
+                                <strong><li>Founded </li></strong>
+                            </ul>
+                        </div>
+                        <div class="col-md-12">
+                            <h4>Summary:</h4>
+                            <p>Paragraph providing summary of the company's business</p>
+                            <strong><p>Mission: </p></strong>
+                        </div>
+                </div>
+            </div>
+
+            <!--Company Pitch-->
+            <div class="row">
+                <div class="col-md-12 container box-styling">
+                    <h3>Why work with us?</h3>
+                    <div>
+                        <ul class="nav-ul-item">
+                            <li class="nav-list-item"><a href=''>Pitch</a></li>
+                            <li class="nav-list-item"><a href=''>Team</a></li>
+                        </ul>
+                        <div class="box-styling">
+                            <div>(Add Image)</div>
+                            <p>Short Pitch</p>
+                        </div><hr>
+                        <div class="box-styling">
+                            <p>(Team Member Review)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--COMPANY REVIEW-->
+            <div class="row">
+                <div class="col-md-12 container box-styling">
+                    <h3>__Company_Name__ Review</h3>
+                    <div class="row">
+                        <div class="col-md-12">
+                            Meta Rating (Aggregate reviews from other sites and average them.)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Linkedin Icon and Stars
+                        </div>
+                        <div class="col-md-3">
+                            Glassdoor Icon and Stars
+                            <a href='https://www.glassdoor.com/index.htm'>powered by <img src='https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a>
+                        </div>
+                        <div class="col-md-3">
+                            Yelp Icon and Stars
+                        </div>
+                        <div class="col-md-3">
+                            Other Icon and Stars
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>(Add Dynamic Content)</p>
+                            
+                            <p>
+                            Lorem ipsum dolor sit amet, nihil integre volutpat eam in. At atqui movet est, eum ex regione fuisset expetenda. No sint mollis constituto est, eu doctus mediocrem eum. Error causae patrioque mei ex. Tollit commodo intellegebat pro ad. An cum dolor exerci hendrerit, in nam fierent blandit salutatus, graeco iuvaret suscipit ea mea. His modo decore mediocritatem at, latine civibus invidunt eu eum.
+                            </p>
+                        </div>
+                    </div><hr>
+                    <div class="row">
+                        <div class="col-md-12 center-text">
+                            <a href="">See All (Count) Reviews</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
-    <div>
-    {% block content %}
-
-    {% endblock %}
-    {% block scripts %}{% endblock %}
+        <div class="col-md-1 less-space"></div>
+        <aside class="col-md-3 container box-styling">
+            <div class="row">
+                <div class="container col-md-12 box-styling">
+                    <h3>Related Vendors/Partners</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 container box-styling">
+                    <span>Internet presence</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 container box-styling">
+                    <span>Follow (Company Name)</span>
+                </div>
+            </div>
+        </aside>
     </div>
+    </div>
+</div>
 
-</body>
+{% endblock %}
 
-</html>
+<!--
+Glassdoor Overview
+Website www.glassdoor.com
+Headquarters    Mill Valley, CA
+Size    501 to 1000 employees
+Founded 2007
+Type    Company - Private
+Industry    Information Technology
+Revenue Unknown / Non-Applicable
+We’re on a mission to help people everywhere find a job and a company they love. In the process, we’re transforming an entire industry through the power of transparency. Join us!
+Mission: To help people everywhere find a job and company they love.
+-->

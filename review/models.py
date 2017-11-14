@@ -43,12 +43,3 @@ class Company_Reviews(models.Model):
 
     def __str__(self):
         return self.title
-
-#class Company_Reviews_Form(ModelForm):
-#    class Meta:
-#        model = Company_Reviews
-#        fields = ['star_rating', 'company_name', 'review']
-
-#form = Company_Reviews_Form()
-#review = Company_Reviews.objects.get(pk=1)
-#form = Company_Reviews_Form(instance=review)

@@ -1,4 +1,4 @@
-{% extends "review/index.html" %}
+{% extends "review/base.html" %}
 
 {% block content %}
     <h2> User Registration </h2>
@@ -19,7 +19,7 @@
                         </ul>
                     </div>
                     <div class="col-md-6" id="sign-up-form">
-                        <form>
+                        <form action="" method="POST">
                             <label>First Name: </label><br>
                             <input type="text" size="30"><br>
                             <label>Last Name: </label><br>
