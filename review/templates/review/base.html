@@ -32,7 +32,8 @@
                     <li class="nav-list-item"><a class="nav-header-text" href="{% url 'api' %}">API</a> |</li>
                     {% if user.is_authenticated %}
                         <li class="nav-list-item"><a class="nav-header-text" href="{% url 'new_company_review' %}">Write a Review</a> |</li>
-                        <li class="nav-list-item">Hello {{ user.username }} | <a href="{% url 'logout' %}">Log Out</a></li>
+                        <li class="nav-list-item">Hello {{ user.username }} </li> |
+                        <li class="nav-list-item"><a class="nav-header-text" href="{% url 'logout' %}">Log Out</a> |</li>
                         
                     {% else %}
                         <li class="nav-list-item"><a class="nav-header-text" href="/review/registration">Register</a> |</li>
