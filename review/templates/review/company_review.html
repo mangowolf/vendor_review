@@ -1,19 +1,21 @@
 {% extends "review/base.html" %}
 {% block content %}
+    <div class="col-md-1"></div>
+    <div class="col-md-6 review-container">
     {% for post in posts %}
-    <div class="review-container">
+        <hr>
         <div class="post-header">
+            <span class="caption">{{ post.published_date }}</span>
             <h2>{{ post.companykey }}</h2>
-            <span class="caption">published: {{ post.published_date }}</span>
-            <hr>
         </div>
         <div class="review-content">
             <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
             <p>{{ post.review|linebreaksbr }}</p>
             <button>Like</button><span id="counter">0</span>
         </div>
-    </div>    
     {% endfor %}
+    </div>
+    <div class="col-md-5"></div>
 
 {% endblock %}
 {% block scripts %}    <script src="/static/review/js/review.js"></script>{% endblock %}
