@@ -2,16 +2,16 @@ h1,h2{
     padding-left: 5px;
 }
 
-/*Test*/
-.box{
-  border: 1px solid black;
-}
-
 /*INDEX PAGE*/
 .logo{
     color: #2980B9;
     font-size: 36px;
     padding-left: 5px;
+}
+
+/*BASE*/
+.main-content-container{
+    position: relative;
 }
 
 /*COMPANY REVIEW PAGE*/
@@ -24,8 +24,8 @@ h1,h2{
     box-shadow: 0 4px 8px grey;
 }
 
-.post-header{
-    background-color: #8bb6f9;
+.caption{
+    margin-left: 10px;
 }
 
 .nav-list-item{
@@ -51,15 +51,23 @@ h1,h2{
     width: 5px;
 }
 
+.post-header{
+    background-color: #8bb6f9;
+}
+
 .review-container{
     width:960px;
     margin: auto;
 }
 
+.review-content{
+  margin-left: 15px;
+}
+
 /*LOGIN PAGE*/
 .login-container{
-    margin: auto;
-    border: 1px solid black;
+    position: absolute;
+    top: 50%;
 }
 
 /*NEW COMPANY PAGE*/
@@ -146,4 +154,8 @@ label:hover ~ input:checked ~ label {
 /*TEST*/
 #counter{
     margin-left: 2px;
+}
+
+.box{
+  border: 1px solid black;
 }

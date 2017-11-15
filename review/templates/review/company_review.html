@@ -4,12 +4,14 @@
     <div class="review-container">
         <div class="post-header">
             <h2>{{ post.companykey }}</h2>
-            <span>published: {{ post.published_date }}</span>
+            <span class="caption">published: {{ post.published_date }}</span>
             <hr>
         </div>
-        <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
-        <p>{{ post.review|linebreaksbr }}</p>
-        <button>Like</button><span id="counter">0</span>
+        <div class="review-content">
+            <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+            <p>{{ post.review|linebreaksbr }}</p>
+            <button>Like</button><span id="counter">0</span>
+        </div>
     </div>    
     {% endfor %}
 
