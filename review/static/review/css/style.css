@@ -3,11 +3,11 @@ h1,h2{
 }
 
 body{
-  border: 1px solid blue;
 }
 
 footer{
   background: black;
+  margin: auto;
 }
 
 /*INDEX PAGE*/
@@ -23,7 +23,16 @@ footer{
 }
 
 .container{
-    margin-bottom: 2px;
+    background-color: #629ac9;
+}
+
+.nav-header-text{
+    color: white;
+    text-decoration: none;
+}
+
+a.nav-header-text:hover{
+  text-decoration: none;
 }
 
 /*COMPANY REVIEW PAGE*/
@@ -73,7 +82,6 @@ footer{
     background: white;
     box-shadow: 2px 2px 2px #bababa;
     margin-bottom: 5px;
-    margin-top: 5px;
 }
 
 .review-content{
