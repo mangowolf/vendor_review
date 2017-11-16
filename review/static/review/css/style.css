@@ -1,3 +1,5 @@
+/*NOTE: Complimentary color: #d5d19f*/;
+
 h1,h2{
     padding-left: 5px;
 }
@@ -22,8 +24,8 @@ footer{
     background: #e0e0e0;
 }
 
-.container{
-    background-color: #629ac9;
+.nav-container{
+  background-color: #629ac9;
 }
 
 .nav-header-text{
@@ -149,6 +151,10 @@ label:hover ~ input:checked ~ label {
     text-align: center;
 }
 
+.reg-header-container{
+  background-color: white;
+}
+
 #reg-page-container{
     margin-top: 20px;
 }
@@ -163,6 +169,7 @@ label:hover ~ input:checked ~ label {
     border-radius: 4px;
     background-color: #fcfcfc;
     box-shadow: 0 4px 8px grey;
+    margin-bottom: 5px;
 }
 
 #sign-in{
