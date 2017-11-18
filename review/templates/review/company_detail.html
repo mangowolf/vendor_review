@@ -1,13 +1,27 @@
 {% extends "review/base.html" %}
 
 {% block content %}
-<div class="col-md-1"></div>
-<div class="col-md-6 container">
+<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 registration-container container">
     <div class="row">
-        stuff
+        <div class="table-responsive">
+            <table class="table-striped">
+                <thead>
+                    <tr><th></th><th></th></tr>
+                </thead>
+                <tbody>
 
+                    <tr><td>Company:</td><td>{{ company_post.company_name }}</td></tr>
+                    <tr><td>Headquarters:</td><td>{{ company_post.headquarters }}</td></tr>
+                    <tr><td>Industry:</td><td>{{ company_post.industry }}</td></tr>
+                    <tr><td>Revenue:</td><td>{{ company_post.revenue }}</td></tr>
+                    <tr><td>Size:</td><td>{{ company_post.size }}</td></tr>
+                    <tr><td>Founded:</td><td>{{ company_post.founded }}</td></tr>
+                    <tr><td>Summary:</td><td>{{ company_post.summary }}</td></tr>
+                </tbody>
+        </div>
     </div>
-<div class="col-md-5"></div>
 </div>
+<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
 
 {% endblock %}

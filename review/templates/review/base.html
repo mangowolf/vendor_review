@@ -21,12 +21,12 @@
     {% block extra_head %}{% endblock %}
 </head>
 <body>
-    <nav class="container nav-container col-md-12">
+    <nav class="col-xs-12 col-sm-12 col-md-12 col-lg-12 container nav-container">
         <div class="row">
-            <div class="col-md-2 logo">
+            <div class="logo">
                 <h4 class="nav-header-text">B2B MetaReview</h4>
             </div>
-            <div class="col-md-10">
+            <div class="">
                 <ul class="nav-ul-item">
                     <li class="nav-list-item"><a class="nav-header-text" href="/review/company_review">Company Reviews</a> |</li>
                     <li class="nav-list-item"><a class="nav-header-text" href="{% url 'api' %}">API</a> |</li>
@@ -44,7 +44,7 @@
             </div>
         </div>
     </nav>
-    <div class="col-md-12 main-content-container">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-content-container">
     {% block content %}
 
     {% endblock %}

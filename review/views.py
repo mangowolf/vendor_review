@@ -21,9 +21,9 @@ def index(request):
 def registration(request):
     return render(request,'review/registration.html')
 
-def company_detail(request):
-    #company_post = get_object_or_404(Company, pk=pk)
-    return render(request, 'review/company_detail.html')
+def company_detail(request, pk):
+    company_post = get_object_or_404(Company, pk=pk)
+    return render(request, 'review/company_detail.html', {'company_post': company_post})
 
 @login_required
 def new_company_review(request):
