@@ -6,7 +6,7 @@
         <hr>
         <div class="post-header">
             <span class="caption">{{ post.published_date }}</span>
-            <h2><a href="{% url 'company_detail' pk=post.pk %}">{{ post.companykey }}</a></h2>
+            <h2><a href="{% url 'company_detail' pk=post.companykey %}">{{ post.companykey.company_name }}</a></h2>
         </div>
         <div class="review-content">
             <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>

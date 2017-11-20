@@ -19,7 +19,7 @@ class Company(models.Model):
     owner = models.ForeignKey('auth.User', related_name='api', on_delete = models.CASCADE)
 
     def __str__(self):
-        return self.company_name
+        return str(self.id)
 
 class Company_Reviews(models.Model):
     companykey = models.ForeignKey(
